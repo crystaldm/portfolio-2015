@@ -1,0 +1,538 @@
+@import "compass";
+@import "compass/reset";
+@import "compass/css3";
+
+////////////////////////////////
+////////////// GLOBAL VARIABLES
+$primary-color: #16a98f;
+$secondary-color: #c4e4dd;
+$highlight-color: #29f8de;
+
+$body-color: #666666;
+$body-font: 'Poppins', sans-serif;
+
+$header-weight: 600;
+$header-size: 1.5em;
+
+$subheader-weight: 500;
+$subheader-size: 1em;
+
+$p-weight: 500;
+$p-size: 0.7em;
+
+$lightbox-bg-color: #e6e6e6;
+
+
+
+////////////////////////////////
+////////////////////////////////
+
+////////////////////////////////
+/////////// KEYFRAME ANIMATIONS
+@include keyframes(fade-in) {
+    0% {
+      @include opacity(0);
+      @include filter(blur(2px));
+    }
+    100% {
+      @include opacity(0.8);
+      @include filter(blur(0));
+    }
+}
+
+@include keyframes(shine-in) {
+    0% {
+      @include opacity(1);
+      right: -55px;
+      top: -75px;
+    }
+    70% {
+      @include opacity(1);
+    }
+    100% {
+      @include opacity(0);
+      -webkit-filter: blur(50px);
+      right: 250px;
+      top: 135px;
+      width: 90px;
+      height: 80px;
+    }
+}
+
+
+////////////////////////////////
+////////////////////////////////
+
+////////////////////////////////
+////////////////// MOBILE STYLES
+
+// general ///////////
+#container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+// body
+h1 {
+  font-family: $body-font;
+  font-weight: $header-weight;
+  font-size: $header-size;
+  color: $primary-color;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: $body-font;
+  font-weight: $subheader-weight;
+  font-size: $subheader-size;
+  color: $primary-color;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: $body-font;
+  font-weight: $p-weight;
+  font-size: $p-size;
+  color: $body-color;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  line-height: 1.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+// header ////////////
+
+//header
+#header {
+  width: 100%;
+  @include filter(blur(0));
+
+  &.blur-out {
+    @include filter(blur(5px));
+  }
+}
+
+// site id
+.site-id {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  border-bottom: thin solid $primary-color;
+
+  img {
+    width: 100%;
+  }
+}
+
+// download resume btn
+.btn {
+  cursor: pointer;
+  display: block;
+  color: $primary-color;
+  font-weight: 500;
+  border: medium solid $primary-color;
+  font-family: $body-font;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 2em;
+  width: 200px;
+  margin:0 auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  &:hover {
+    @include transition(background-color 0.4s ease-in);
+    background-color: $primary-color;
+    color: #fff;
+  }
+}
+
+// portfolio /////////
+
+// lightbox
+#lightbox {
+  @include opacity(1);
+  @include transition(opacity 0.2s ease-in);
+  @include animation-fill-mode(both);
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  z-index: 100;
+  overflow-y: scroll;
+
+  &.hidden {
+    @include opacity(0);
+    pointer-events: none;
+  }
+}
+
+// thumbnails
+#thumbnail-c {
+  @include filter(blur(0));
+
+  &.blur-out {
+    @include filter(blur(5px));
+  }
+}
+
+.thumbnail {
+  cursor: pointer;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 0.5em;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+// project content
+#project-item-01, #project-item-02, #project-item-03, #project-item-04, #project-item-05, #project-item-06, #project-item-07, #project-item-08, #project-item-09 {
+  display: none;
+  background-color: $lightbox-bg-color;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em;
+
+  &.fadein {
+    display: block;
+  }
+}
+
+.project-content {
+  h2 {
+    font-weight: $header-weight;
+    margin-top: 0.3em;
+  }
+}
+
+.project-examples  {
+  margin-top: 3em;
+  margin-bottom: 2em;
+  position: relative;
+}
+
+// project content
+.project-example-item {
+  display: block;
+  margin: 0;
+  width: 100%;
+
+  img {
+    border: thin solid #c7c7c7;
+    width: 100%;
+  }
+}
+
+// client logos
+.netflix-logo {
+  background-image: url('../imgs/netflix-logo.png');
+  width: 50px;
+  height: 14px;
+  float: right;
+
+  img {
+    width: 100%;
+  }
+}
+
+.paramount-logo {
+  background-image: url('../imgs/paramount-logo.png');
+  width: 50px;
+  height: 47px;
+  float: right;
+
+  img {
+    width: 100%;
+  }
+}
+
+.syfy-logo {
+  background-image: url('../imgs/syfy-logo.png');
+  width: 50px;
+  height: 27px;
+  float: right;
+
+  img {
+    width: 100%;
+  }
+}
+
+.video-c {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+  width: 80%;
+  margin: 0 auto;
+}
+.video-c iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+// footer ////////////
+#footer {
+  @include filter(blur(0));
+  width: 90%;
+  margin: 0 auto;
+  border-top: thin solid $primary-color;
+  padding-top: 1em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+
+  &.blur-out {
+    @include filter(blur(5px));
+  }
+}
+
+// social
+.social {
+  width: 189px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+.social-media {
+  color: $primary-color;
+  cursor: pointer;
+  display: inline-block;
+  border: thin solid $primary-color;
+  padding: 7px 12px 7px 12px;
+  text-align: center;
+
+  &:hover {
+    @include transition(background-color 0.3s ease-in);
+    background-color: $primary-color;
+    color: #fff;
+  }
+}
+
+// contact
+.contact {
+  text-align: center;
+}
+
+// hidden elements ////////////
+
+.thumb-overlay {
+  display: none;
+}
+
+#close {
+  display: none;
+}
+
+.mobile-only {
+  display: block;
+}
+
+// fixes ////////////
+.ad-layout-fix {
+  margin: 0;
+}
+
+#iframe-04, #iframe-05 {
+  display: none;
+}
+
+
+
+////////////////////////////////
+////////////////////////////////
+
+////////////////////////////////
+///////////////// TABLET STYLES
+
+
+////////////////////////////////
+////////////////////////////////
+
+////////////////////////////////
+///////////////// DESKTOP STYLES
+
+@media (min-width: 580px) {
+  // general ////////////
+
+  // header ////////////
+
+  //header
+  #header {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    overflow: hidden;
+  }
+  // site id
+  .site-id {
+    width: 20%;
+    margin: 0;
+    padding-left: 1em;
+    border: none;
+    clear: both;
+    float: left;
+  }
+
+  // download resume btn
+  .btn {
+    cursor: pointer;
+    display: block;
+    color: $primary-color;
+    font-weight: 500;
+    border: medium solid $primary-color;
+    font-family: $body-font;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 2em;
+    width: 200px;
+    float: right;
+    margin: 6em 3.4em 0em 0em;
+  }
+
+  // visit site btn
+  #site-btn {
+    float: none;
+    margin-top: 1em;
+    color: #fff;
+    background-color: $primary-color;
+
+    &:hover {
+      @include transition(background-color 0.4s ease-in);
+      background-color: #fff;
+      color: $primary-color;
+    }
+  }
+
+  //close button
+  #close {
+    display: block;
+    cursor: pointer;
+    color: #c4e4dd;
+    display: block;
+    width: 10px;
+    float: right;
+    font-size: 2em;
+    margin: 0em 3em 0em 0em;
+  }
+
+  // portfolio /////////
+   #thumbnail-c {
+     width: 80%;
+     margin: 0 auto;
+   }
+
+  // thumbnails
+  .thumbnail {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 30%;
+    margin: 0 1em 2em 1em;
+
+    &:hover {
+      .thumb-overlay {
+        @include animation(fade-in 0.5s ease-in);
+        @include animation-fill-mode(both);
+      }
+
+      .shine {
+        @include animation(shine-in 1.7s ease-in);
+        @include animation-fill-mode(forwards);
+        @include animation-delay(0.2s)
+      }
+    }
+  }
+
+  .thumb-overlay {
+    @include opacity(0);
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+
+    h1, h2 {
+      color: #ffffff;
+      position: absolute;
+      bottom: 8px;
+      left: 15px;
+      line-height: 30px;
+    }
+
+    h1 {
+      font-size: 1em;
+      bottom: 25px;
+    }
+
+    .boq {
+      position: absolute;
+      top: 10px;
+    }
+  }
+
+  .shine {
+    @include transform(rotate(-25deg));
+    @include filter(blur(10px));
+    position: absolute;
+    right: -50px;
+    top: -75px;
+    width: 40px;
+    height: 100px;
+    background-color: $highlight-color;
+  }
+
+  // project content
+  .project-example-item {
+    display: inline-block;
+    margin: 1em;
+    width: 47%;
+
+    img {
+      border: thin solid #c7c7c7;
+      width: 100%;
+    }
+  }
+
+  // footer ////////////
+  #footer p {
+    font-size: 1em;
+  }
+
+  // social
+  .social {
+    // width: 13%;
+  }
+
+  .social-media {
+    font-size: 1.5em;
+  }
+
+  // hidden elements ////////////
+  .mobile-only {
+    display: none;
+  }
+
+  // fixes ////////////
+  .ad-layout-fix {
+    width: 250px;
+    display: inline-block;
+    margin-bottom: 1em;
+    margin-right: 4em;
+  }
+
+}

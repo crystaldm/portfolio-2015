@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style type="text/css">
+		#container {
+			display: none;
+		}
+	</style>
+	<script>
+		EBModulesToLoad = ['Video', 'EBCMD'];
+	</script>
+	<script src="js/EBLoader.js"></script>
+	<script src="js/main.js"></script>
+</head>
+
+<body>
+	<div id="container">
+		<div id="content">
+			<section id="resolve-c" class="resolve-c">
+					<!-- <div id="bg"></div> -->
+					<video id="resolve-video" class="video-e" width="508" height="250">
+						<source id="resolve-mp4-src" type="video/mp4" src="" />
+					</video>
+
+					<div class="res-tt-c"></div>
+					<div id="res-tune-c" class="res-tune-c"></div>
+
+					<button id="resolve-exit" class="exit"></button>
+
+					<div class="trailer-video-c">
+						<video id="trailer-video" class="video" width="462" height="250">
+							<source id="trailer-mp4-src" type="video/mp4" src="" />
+						</video>
+
+						<div id="video-controls-c" class="video-controls-c">
+							<button id="play-toggle" class="play"></button>
+							<button id="audio-toggle"></button>
+
+							<div class="seekbar-c">
+								<input type="range" id="seekBar" value="0">
+							</div>
+						</div>
+
+						<button id="play"></button>
+					</div><!-- END .video-c -->
+
+					<div id="replay">
+						<img id="cta-img" src="imgs/cta.png" alt="">
+						<img id="shine" src="imgs/shine.png">
+					</div>
+			</section>
+
+			<section id="progressive-c" class="progressive-c">
+				<div class="video-c">
+					<video id="video" class="video-e" width="970" height="210">
+						<source id="mp4-src" type="video/mp4" src="" />
+					</video>
+				</div><!-- END .video-c -->
+
+				<div id="progressive-bar" class="progressive-bar"></div>
+				<button id="progressive-exit" class="exit"></button>
+			</section>
+		</div><!-- END .content -->
+	</div><!-- END .container -->
+</body>
+</html>

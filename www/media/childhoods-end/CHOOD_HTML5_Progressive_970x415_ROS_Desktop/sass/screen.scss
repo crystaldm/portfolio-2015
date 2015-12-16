@@ -1,0 +1,510 @@
+@import "compass/css3";
+
+$ad-width: 970px;
+$ad-height: 415px;
+$video-c-width: 970px;
+$video-c-height: 352px;
+$video-z-index: 10;
+$other-z-index: 20;
+
+$seekbar-width: 500px;
+$seekbar-height: 3px;
+
+
+@include keyframes(fade-in) {
+	0% {
+    @include opacity(0);
+		pointer-events: none !important;
+  }
+
+	100% {
+    @include opacity(1);
+		pointer-events: auto !important;
+  }
+}
+
+@include keyframes(fade-out) {
+	0% {
+    @include opacity(1);
+		pointer-events: auto !important;
+  }
+
+	100% {
+    @include opacity(0);
+		pointer-events: none !important;
+  }
+}
+
+@include keyframes(shine) {
+	0% {
+		@include opacity(0);
+		left: -120px;
+	}
+
+	50% {
+		@include opacity(1);
+	}
+
+	75% {
+		left: 0px;
+	}
+	80% {
+		@include opacity(0);
+		left: 10px;
+	}
+
+	100% {
+		@include opacity(0);
+		left: -120px;
+	}
+}
+
+//////////////////////////////////////
+//////////////////////////////////////
+
+body,
+body * {
+  position: relative;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  @include transform(translate3d(0, 0, 0));
+}
+
+:focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
+button {
+  cursor: pointer;
+	background-color: transparent;
+}
+
+.exit {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+	// z-index: $other-z-index;
+}
+
+
+#rb {
+	display: none;
+	position: absolute;
+  overflow: hidden;
+  z-index: $other-z-index;
+
+  .start &, .progressive & {
+    top: 5px;
+    right: 5px;
+  }
+
+  .resolve & {
+    top: 255px;
+    left: 5px;
+  }
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.AU & {
+		width: 18px;
+    height: 18px;
+	}
+
+	.NZ & {
+    height: 18px;
+		width: 18px;
+	}
+
+	.BR & {
+    height: 17px;
+		width: 17px;
+	}
+}
+
+//////////////////////////////////////
+//////////////////////////////////////
+
+#container {
+  @include box-sizing(border-box);
+	// background: #000;
+  position: absolute;
+  width: $ad-width;
+  height: $ad-height;
+  border: 1px solid #2d1e15;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#content {
+	border: none;
+	// background: #000;
+  position: absolute;
+  width: $ad-width;
+  height: $ad-height;
+	top: 0;
+}
+
+section {
+  @include box-sizing(border-box);
+  position: absolute;
+  width: $ad-width;
+  height: $ad-height;
+	top: 0;
+	left: 0;
+
+	// -webkit-transform: translateZ(0px);
+	@include transform(translateZ(0px));
+}
+
+
+// .resolve-c {
+// 	.resolve & {
+// 		pointer-events: auto !important;
+// 		z-index: $other-z-index;
+// 	}
+//
+// 	.progressive & {
+// 		pointer-events: none !important;
+// 		z-index: 10;
+// 	}
+// }
+//
+// .progressive-c {
+// 	.resolve & {
+// 		pointer-events: none !important;
+// 		z-index: 10;
+// 	}
+//
+// 	.progressive & {
+// 		pointer-events: auto !important;
+// 		z-index: $other-z-index;
+// 	}
+// }
+
+//////////////////////////////////////
+//////////////////////////////////////
+
+.video-c {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: $video-c-width;
+	height: $video-c-height;
+	// z-index: $video-z-index;
+
+	// &:hover {
+	// 	.video-controls-c {
+	// 		bottom: 45px;
+	// 	}
+	// }
+}
+
+.video-e {
+	position: absolute;
+	background: #000;
+	top: 0;
+	left: 0;
+}
+
+#resolve-video {
+	width: 374px;
+  height: 415px;
+}
+
+.trailer-video-c {
+	width: 597px;
+  height: 415px;
+	right: 0;
+	top: 0;
+	position: absolute;
+
+	&:hover {
+		.video-controls-c {
+			bottom: 15px;
+		}
+	}
+}
+
+#play {
+	background: url('../imgs/large-play.png') no-repeat center center transparent;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.video-controls-c {
+	@include transition(bottom 0.5s ease-out);
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 16px;
+	bottom: -20px;
+	left: 20px;
+}
+
+#play-toggle {
+  background: url('../imgs/icon-pause.png') no-repeat;
+  width: 12px;
+  height: 16px;
+
+  &.play {
+    background: url('../imgs/icon-play.png') no-repeat;
+  }
+}
+
+#audio-toggle {
+  background: url('../imgs/icon-volume-on.png') no-repeat;
+	margin-top: 2px;
+	margin-left: 3px;
+  width: 14px;
+  height: 16px;
+
+  &.off {
+    background: url('../imgs/icon-volume-off.png') no-repeat;
+  }
+}
+
+.seekbar-c {
+	position: absolute;
+	top: 4px;
+	left: 40px;
+	margin: 0;
+	padding: 0;
+	width: $seekbar-width;
+	height: 13px;
+}
+
+#seekBar {
+	margin: 0;
+	padding: 0;
+	top: -6px;
+  width: $seekbar-width;
+	height: $seekbar-height;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin:7px 0;
+  width: 100%;
+}
+
+@-moz-document url-prefix() {
+  input[type=range] {
+     margin:2px 0;
+  }
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.4), 0px 0px 1px #0d0d0d;
+  background: #898989;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.4), 0px 0px 1px #0d0d0d;
+  height: 10px;
+  width: 14px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.5px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #898989;
+}
+input[type=range]::-moz-range-track {
+	top: -15px;
+	width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.4), 0px 0px 1px #0d0d0d;
+  background: #898989;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.4), 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 10px;
+  width: 14px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #898989;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.4), 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #898989;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.4), 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.4), 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 10px;
+  width: 14px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #898989;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #898989;
+}
+
+//////////////////////////////////////
+//////////////////////////////////////
+
+.progressive-c {
+	@include opacity(1);
+	.resolve & {
+		@include animation(fade-out 1s ease-out);
+		@include animation-fill-mode(both);
+		@include animation-delay(0s);
+		// pointer-events: none !important;
+	}
+
+	.progressive & {
+		@include animation(fade-in 0.75s ease-out);
+		@include animation-fill-mode(both);
+		@include animation-delay(0s);
+		// pointer-events: auto !important;
+	}
+}
+
+.resolve-c {
+	// @include opacity(0);
+	top: -1px;
+	left: -1px;
+
+	// .resolve & {
+	// 	@include animation(fade-in 1.5s ease-out);
+	// 	@include animation-fill-mode(both);
+	// 	@include animation-delay(1s);
+	// 	// pointer-events: auto !important;
+	// }
+	//
+	// .progressive & {
+	// 	@include animation(fade-out 1s ease-out);
+	// 	@include animation-fill-mode(both);
+	// 	@include animation-delay(0s);
+	// 	// pointer-events: none !important;
+	// }
+}
+
+.resolve-c {
+	.progressive & {
+		@include animation(fade-out 0.5s ease-out);
+		@include animation-fill-mode(both);
+		@include animation-delay(0s);
+	}
+
+	.resolve & {
+		@include animation(fade-in 0s ease-out);
+		@include animation-fill-mode(both);
+		@include animation-delay(0s);
+	}
+}
+
+.progressive-bar {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 63px;
+	z-index: 20;
+	pointer-events: none;
+}
+
+.res-tt-c {
+	@include opacity(0);
+	position: absolute;
+	background: url('../imgs/res-tt.png');
+	width: 356px;
+  height: 130px;
+	top: 115px;
+	left: 10px;
+
+	.resolve & {
+		@include animation(fade-in 1.5s ease-out);
+		@include animation-fill-mode(both);
+		@include animation-delay(1.5s);
+	}
+}
+
+.res-tune-c {
+	position: absolute;
+	width: 393px;
+  height: 96px;
+  left: 0;
+  bottom: 0;
+
+	.resolve & {
+		@include animation(fade-in 1.5s ease-out);
+		@include animation-fill-mode(both);
+		@include animation-delay(1.5s);
+	}
+}
+
+#replay {
+	position: absolute;
+	cursor: pointer;
+	top: 1px;
+	left: 1px;
+	width: 116px;
+	height: 52px;
+}
+
+#shine {
+	@include opacity(0);
+	position: absolute;
+	left: -120px;
+	top: -30px;
+
+	.hover & {
+		@include animation(shine 1.5s ease-out);
+		@include animation-fill-mode(both);
+		@include animation-delay(0s);
+	}
+}
+
+#close-btn {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+//////////////////////////////////////
+//////////////////////////////////////

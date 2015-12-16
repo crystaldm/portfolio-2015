@@ -1,0 +1,283 @@
+@import "compass/css3";
+
+/////////////////////////////////////////
+//////////////////// KEYFRAME ANIMATIONS
+@include keyframes(tt-in) {
+  0% {
+    @include opacity(0);
+    @include transform(scale(4));
+  }
+  100% {
+    @include opacity(1);
+    @include transform(scale(1));
+  }
+}
+
+@include keyframes(cta-in) {
+  0% {
+    bottom: -30px
+  }
+  100% {
+    bottom: 5px;
+  }
+}
+
+@include keyframes(resolve-bar-in) {
+  0% {
+    bottom: -47px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+/////////////////////////////////////////
+//////////////////////////////// GENERAL
+body,
+body * {
+  position: relative;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  @include transform(translate3d(0, 0, 0));
+}
+:focus {
+  outline: none;
+}
+::-moz-focus-inner {
+  border: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.exit {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+
+#container {
+  @include box-sizing(border-box);
+  background-color: #fff;
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  border: 1px solid #754c24;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+section {
+  @include box-sizing(border-box);
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  top: 0;
+  left: 0;
+}
+
+/////////////////////////////////////////
+/////////////////////////////// ELEMENTS
+#resolve-c {
+  @include opacity(1);
+  background: url('../imgs/resolve-bg.jpg') no-repeat center top;
+
+  &.fadeout {
+    @include transition(opacity 0.5s ease-out);
+    @include opacity(0);
+    @include animation-fill-mode(forwards)
+  }
+}
+
+#progressive-c {
+  @include opacity(1);
+
+  &.fadeout {
+    @include transition(opacity 0.5s ease-out);
+    @include opacity(0);
+    @include animation-fill-mode(forwards)
+  }
+}
+
+.progressive-bar-c {
+  background: url('../imgs/progressive-bar-bg.jpg') no-repeat;
+  position: absolute;
+  height: 48px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.resolve-bar-c {
+  background: url('../imgs/resolve-bar-bg.png') no-repeat;
+  position: absolute;
+  height: 48px;
+  width: 100%;
+  left: 0;
+  bottom: -47px;
+
+  .resolve-anim & {
+    @include animation(resolve-bar-in 0.3s ease-in);
+    @include animation-fill-mode(forwards);
+    @include animation-delay(0.5s);
+  }
+}
+
+#white {
+  @include animation(flash-bomb 1s ease-in);
+  @include animation-play-state(paused);
+  @include animation-fill-mode(forwards);
+  @include opacity(1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+
+  &.boom {
+    @include animation-play-state(running);
+  }
+}
+
+#replay {
+  @include opacity(0);
+  background: url('../imgs/replay.png') no-repeat transparent;
+  position: absolute;
+  z-index: 100;
+  bottom: 45px;
+  left: 5px;
+  width: 20px;
+  height: 21px;
+
+  .resolve-anim & {
+    @include transition(opacity 0.4s ease-in);
+    @include transition-delay(1s);
+    @include opacity(1);
+    @include animation-fill-mode(forwards)
+  }
+}
+
+.cta {
+  background: url('../imgs/cta.png') no-repeat;
+  position: absolute;
+  width: 109px;
+  height: 31px;
+  right: 33px;
+  bottom: 9px;
+}
+
+#resolve-cta {
+  left: 23px;
+  bottom: -30px;
+
+  .resolve-anim & {
+    @include animation(cta-in 0.3s ease-in);
+    @include animation-fill-mode(forwards);
+    @include animation-delay(0.5s);
+  }
+}
+
+#tt {
+  background: url('../imgs/tt.png') no-repeat;
+  position: absolute;
+  width: 111px;
+  height: 39px;
+  left: 35px;
+  top: 4px;
+}
+
+#resolve-tt {
+  @include opacity(0);
+  background: url('../imgs/resolve-tt.png') no-repeat;
+  position: absolute;
+  width: 199px;
+  height: 69px;
+  left: 52px;
+  bottom: 44px;
+
+  .resolve-anim & {
+    @include animation(tt-in 0.3s ease-in);
+    @include animation-fill-mode(forwards);
+  }
+}
+
+#resolve-messaging {
+  background: url('../imgs/messaging.png') no-repeat;
+  position: absolute;
+  width: 139px;
+  height: 25px;
+  right: 23px;
+  bottom: 8px;
+}
+
+/////////////////////////////////////////
+/////////////////////////////////// VIDEO
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+}
+
+.video-c {
+  position: relative;
+  width: 300px;
+  height: 203px;
+
+  &:hover {
+    .video-controls-c {
+      bottom: 6px;
+    }
+  }
+}
+
+.video-controls-c {
+  @include transition(bottom 0.3s ease-out);
+  @include transition-delay(0.3s);
+  position: absolute;
+  width: 100%;
+  height: 16px;
+  bottom: -16px;
+
+  button {
+    margin-left: 6px;
+  }
+}
+
+#large-audio {
+  background: url('../imgs/large-audio.png') center center no-repeat transparent;
+  position: absolute;
+  width: 100%;
+  height: 203px;
+  top: 0;
+  left: 0;
+}
+
+#play-toggle {
+  background: url('../imgs/video-pause.png') no-repeat;
+  width: 12px;
+  height: 16px;
+
+  &.paused {
+    background: url('../imgs/video-play.png') no-repeat;
+  }
+}
+
+#audio-toggle {
+  background: url('../imgs/audio-on.png') no-repeat;
+  width: 14px;
+  height: 16px;
+
+  &.muted {
+    background: url('../imgs/audio-off.png') no-repeat;
+  }
+}

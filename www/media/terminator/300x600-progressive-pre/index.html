@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script src="https://s0.2mdn.net/ads/studio/Enabler.js" type="text/javascript"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<!-- for polite load -->
+	<style type="text/css">
+		#ad {
+			display: none;
+		}
+	</style>
+
+	<script language="javascript">
+		if (Enabler.isInitialized()) {
+			init();
+		} else {
+			Enabler.addEventListener(studio.events.StudioEvent.INIT, init);
+		}
+
+		/**
+		* @function init()
+		* @description run polite load
+		*/
+		function init() {
+			if (Enabler.isPageLoaded()) {
+				politeInit();
+			} else {
+				Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, politeInit);
+			}
+		}
+
+		/**
+		* @function politeInit()
+		* @description init polite load
+		*/
+		function politeInit() {
+			var extJavascript = document.createElement('script');
+			extJavascript.setAttribute('type', 'text/javascript');
+			extJavascript.setAttribute('src', Enabler.getUrl('js/main.js'));
+			document.getElementsByTagName('head')[0].appendChild(extJavascript);
+
+			WebFontConfig = {
+				google: {
+					families: ['Montserrat:700:latin']
+				}
+			};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+					'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.type = 'text/javascript';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+
+			// Link CSS Stylesheet
+			var extCSS = document.createElement('link');
+			extCSS.setAttribute("rel", "stylesheet");
+			extCSS.setAttribute("type", "text/css");
+			extCSS.setAttribute("href", Enabler.getUrl("styles/screen.css"));
+			document.getElementsByTagName("head")[0].appendChild(extCSS);
+		}
+	</script>
+
+</head>
+<body>
+	<!-- ad -->
+	<div id="ad" class="">
+		<!-- content -->
+		<div id="ad-content" class="ad-content">
+
+		<div id="bg"></div>
+
+		<div id="ad-inner-c-resolve" class="">
+				<div id="logo-r"></div>
+				<div id="copyright-r"></div>
+				<div id="copy-r"></div>
+				<div id="cta-r"></div>
+		</div> <!-- end ad-inner-c -->
+
+		<div id="ad-inner-c">
+				<div id="logo"></div>
+				<div id="copyright"></div>
+				<div id="copy"></div>
+				<div id="cta"></div>
+		</div> <!-- end ad-inner-c -->
+
+			<!-- background exit -->
+			<button id="background-exit" class="background-exit"></button>
+
+			<!-- animation video -->
+			<div id="anim-video-c">
+				<video id="anim-video" width="300" height="600">
+					<source id="video_mp4_src" type="video/mp4" src="anim_video.mp4" />
+					<source id="video_ogg_src" type="video/ogg" src="" />
+				</video>
+			</div> <!-- end video container -->
+
+			<div id="white-overlay"></div>
+
+			<!-- video container -->
+			<div id="video-c">
+				<video id="video" width="300" height="171">
+					<source id="video_mp4_src" type="video/mp4" src="trailer.mp4" />
+					<source id="video_ogg_src" type="video/ogg" src="" />
+				</video>
+
+				<div id="video-controls">
+					<button type="button" id="play-pause"></button>
+					<button type="button" id="audio-toggle" class="sound-off"></button>
+				</div>
+				<div id="replay-overlay"></div>
+				<div id="replay-btn"></div>
+
+				<div id="audio-large"></div>
+
+			</div> <!-- end video container -->
+
+		</div> <!-- end content -->
+
+	</div> <!-- end ad -->
+</body>
+</html>

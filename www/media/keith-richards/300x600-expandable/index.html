@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Keith Richards 300x600 Progressive</title>
+    <style>
+      #container {
+        display: none;
+      }
+    </style>
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="KR_300x600.css"> -->
+
+    <!-- Enabler should always come first. -->
+    <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+
+      <div id="expanding-c" class="collapsed">
+        <div id="expanded-c" class="expanded-c">
+          <div id="expand-image-c">
+            <!-- Inset images here -->
+          </div>
+
+          <div id="ex-bg-exit"></div>
+
+          <!-- VIDEO PLAYER -->
+          <video id="vidPlayer">
+            <source id="trailer_mp4" type="video/mp4" src="" />
+          </video>
+          <div id="vidControls">
+            <div id="playBtn"><img src="playIcon.png" /></div>
+            <div id="pauseBtn"><img src="pauseIcon.png" /></div>
+            <div id="muteBtn"> <img src="soundOn.png" /></div>
+            <div id="unmuteBtn"><img src="soundOff.png" /></div>
+            <input type="range" id="seekBar" value="0">
+          </div>
+
+          <div id="replay_overlay"></div>
+
+          <div id="ctaBtn_tab">
+            <div id="ctaBG_tab"></div>
+            <div id="ctaTxt_tab">WATCH NOW <span class="icon"> > </span></div>
+          </div>
+
+          <div id="close-btn"></div>
+        </div>
+
+        <div class="collapsed-c">
+          <!-- END FRAME -->
+          <div id="endFrame">
+            <div id="end-image-c">
+              <!-- Inset images here -->
+            </div>
+
+            <div id="bg-exit"></div>
+
+            <div id="ctaBtn">
+				      <div id="ctaBG"></div>
+				      <div id="ctaTxt">WATCH NOW <span class="icon"> > </span></div>
+    			  </div>
+
+            <div id="expand-btn"></div>
+
+          </div><!-- end endFrame div -->
+        </div>
+      </div><!-- END #expanding-c -->
+
+    </div><!-- end main-panel div -->
+
+	  <!-- load javascript -->
+    <script src="KR_300x600.js"></script>
+
+  </body>
+</html>

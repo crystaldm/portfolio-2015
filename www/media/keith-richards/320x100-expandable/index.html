@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Keith Richards 300x250 Progressive</title>
+    <style>
+      #container {
+        display: none;
+      }
+    </style>
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="KR_300x250.css"> -->
+
+    <!-- Enabler should always come first. -->
+    <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+
+  </head>
+
+  <body>
+
+<div id="container">
+
+
+<div id="expanding-c" class="collapsed">
+
+  <div id="expanded-c">
+    <div id="expanded-img-c">
+    </div>
+    <!-- VIDEO PLAYER -->
+    <video id="vidPlayer">
+      <source id="trailer_mp4" type="video/mp4" src="trailer.mp4" />
+    </video>
+    <div id="vidControls">
+        <div id="playBtn"><img src="playIcon.png" /></div>
+        <div id="pauseBtn"><img src="pauseIcon.png" /></div>
+        <div id="muteBtn"> <img src="soundOn.png" /></div>
+        <div id="unmuteBtn"><img src="soundOff.png" /></div>
+        <input type="range" id="seekBar" value="0">
+    </div>
+
+    <div id="clickSoundBtn">
+      <!-- <p>CLICK FOR SOUND</p> -->
+    </div>
+  </div>
+
+  <!-- collapsed -->
+  <div id="collapsed-c">
+    <div id="endFrame">
+      <div id="end-image-c">
+      </div>
+      <div id="ctaBtn" >
+            <div id="ctaBG"></div>
+            <div id="ctaTxt">WATCH NOW <span class="icon"> > </span></div>
+      </div>
+    </div>
+    <div id="bg-exit"></div>
+  </div> <!-- end collapsed -->
+
+</div>
+
+
+</div>
+
+	<!-- load javascript -->
+    <script src="KR_300x250.js"></script>
+
+  </body>
+</html>

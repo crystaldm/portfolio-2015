@@ -1,0 +1,646 @@
+/* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0;
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 0.8;
+    filter: blur(0);
+  }
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 0.8;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 0.8;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
+@-moz-keyframes shine-in {
+  0% {
+    opacity: 1;
+    right: -55px;
+    top: -75px;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-filter: blur(50px);
+    right: 250px;
+    top: 135px;
+    width: 90px;
+    height: 80px;
+  }
+}
+@-webkit-keyframes shine-in {
+  0% {
+    opacity: 1;
+    right: -55px;
+    top: -75px;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-filter: blur(50px);
+    right: 250px;
+    top: 135px;
+    width: 90px;
+    height: 80px;
+  }
+}
+@keyframes shine-in {
+  0% {
+    opacity: 1;
+    right: -55px;
+    top: -75px;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-filter: blur(50px);
+    right: 250px;
+    top: 135px;
+    width: 90px;
+    height: 80px;
+  }
+}
+/* line 70, ../sass/screen.scss */
+#container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* line 76, ../sass/screen.scss */
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  color: #16a98f;
+  text-transform: uppercase;
+}
+
+/* line 84, ../sass/screen.scss */
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  color: #16a98f;
+  text-transform: uppercase;
+}
+
+/* line 92, ../sass/screen.scss */
+p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.7em;
+  color: #666666;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  line-height: 1.5em;
+}
+
+/* line 102, ../sass/screen.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 109, ../sass/screen.scss */
+#header {
+  width: 100%;
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+/* line 113, ../sass/screen.scss */
+#header.blur-out {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+
+/* line 119, ../sass/screen.scss */
+.site-id {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  border-bottom: thin solid #16a98f;
+}
+/* line 126, ../sass/screen.scss */
+.site-id img {
+  width: 100%;
+}
+
+/* line 132, ../sass/screen.scss */
+.btn {
+  cursor: pointer;
+  display: block;
+  color: #16a98f;
+  font-weight: 500;
+  border: medium solid #16a98f;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 2em;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+/* line 147, ../sass/screen.scss */
+.btn:hover {
+  -moz-transition: background-color 0.4s ease-in;
+  -o-transition: background-color 0.4s ease-in;
+  -webkit-transition: background-color 0.4s ease-in;
+  transition: background-color 0.4s ease-in;
+  background-color: #16a98f;
+  color: #fff;
+}
+
+/* line 157, ../sass/screen.scss */
+#lightbox {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  -moz-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  z-index: 100;
+  overflow-y: scroll;
+}
+/* line 171, ../sass/screen.scss */
+#lightbox.hidden {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* line 178, ../sass/screen.scss */
+#thumbnail-c {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+/* line 181, ../sass/screen.scss */
+#thumbnail-c.blur-out {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+
+/* line 186, ../sass/screen.scss */
+.thumbnail {
+  cursor: pointer;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 0.5em;
+}
+/* line 192, ../sass/screen.scss */
+.thumbnail img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 199, ../sass/screen.scss */
+#project-item-01, #project-item-02, #project-item-03, #project-item-04, #project-item-05, #project-item-06, #project-item-07, #project-item-08, #project-item-09 {
+  display: none;
+  background-color: #e6e6e6;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em;
+}
+/* line 206, ../sass/screen.scss */
+#project-item-01.fadein, #project-item-02.fadein, #project-item-03.fadein, #project-item-04.fadein, #project-item-05.fadein, #project-item-06.fadein, #project-item-07.fadein, #project-item-08.fadein, #project-item-09.fadein {
+  display: block;
+}
+
+/* line 212, ../sass/screen.scss */
+.project-content h2 {
+  font-weight: 600;
+  margin-top: 0.3em;
+}
+
+/* line 218, ../sass/screen.scss */
+.project-examples {
+  margin-top: 3em;
+  margin-bottom: 2em;
+  position: relative;
+}
+
+/* line 225, ../sass/screen.scss */
+.project-example-item {
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+/* line 230, ../sass/screen.scss */
+.project-example-item img {
+  border: thin solid #c7c7c7;
+  width: 100%;
+}
+
+/* line 237, ../sass/screen.scss */
+.netflix-logo {
+  background-image: url("../imgs/netflix-logo.png");
+  width: 50px;
+  height: 14px;
+  float: right;
+}
+/* line 243, ../sass/screen.scss */
+.netflix-logo img {
+  width: 100%;
+}
+
+/* line 248, ../sass/screen.scss */
+.paramount-logo {
+  background-image: url("../imgs/paramount-logo.png");
+  width: 50px;
+  height: 47px;
+  float: right;
+}
+/* line 254, ../sass/screen.scss */
+.paramount-logo img {
+  width: 100%;
+}
+
+/* line 259, ../sass/screen.scss */
+.syfy-logo {
+  background-image: url("../imgs/syfy-logo.png");
+  width: 50px;
+  height: 27px;
+  float: right;
+}
+/* line 265, ../sass/screen.scss */
+.syfy-logo img {
+  width: 100%;
+}
+
+/* line 270, ../sass/screen.scss */
+.video-c {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* line 278, ../sass/screen.scss */
+.video-c iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 287, ../sass/screen.scss */
+#footer {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+  width: 90%;
+  margin: 0 auto;
+  border-top: thin solid #16a98f;
+  padding-top: 1em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+/* line 296, ../sass/screen.scss */
+#footer.blur-out {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+
+/* line 302, ../sass/screen.scss */
+.social {
+  width: 189px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+/* line 308, ../sass/screen.scss */
+.social-media {
+  color: #16a98f;
+  cursor: pointer;
+  display: inline-block;
+  border: thin solid #16a98f;
+  padding: 7px 12px 7px 12px;
+  text-align: center;
+}
+/* line 316, ../sass/screen.scss */
+.social-media:hover {
+  -moz-transition: background-color 0.3s ease-in;
+  -o-transition: background-color 0.3s ease-in;
+  -webkit-transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s ease-in;
+  background-color: #16a98f;
+  color: #fff;
+}
+
+/* line 324, ../sass/screen.scss */
+.contact {
+  text-align: center;
+}
+
+/* line 330, ../sass/screen.scss */
+.thumb-overlay {
+  display: none;
+}
+
+/* line 334, ../sass/screen.scss */
+#close {
+  display: none;
+}
+
+/* line 338, ../sass/screen.scss */
+.mobile-only {
+  display: block;
+}
+
+/* line 343, ../sass/screen.scss */
+.ad-layout-fix {
+  margin: 0;
+}
+
+/* line 347, ../sass/screen.scss */
+#iframe-04, #iframe-05 {
+  display: none;
+}
+
+@media (min-width: 580px) {
+  /* line 372, ../sass/screen.scss */
+  #header {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    overflow: hidden;
+  }
+
+  /* line 380, ../sass/screen.scss */
+  .site-id {
+    width: 20%;
+    margin: 0;
+    padding-left: 1em;
+    border: none;
+    clear: both;
+    float: left;
+  }
+
+  /* line 390, ../sass/screen.scss */
+  .btn {
+    cursor: pointer;
+    display: block;
+    color: #16a98f;
+    font-weight: 500;
+    border: medium solid #16a98f;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 2em;
+    width: 200px;
+    float: right;
+    margin: 6em 3.4em 0em 0em;
+  }
+
+  /* line 406, ../sass/screen.scss */
+  #site-btn {
+    float: none;
+    margin-top: 1em;
+    color: #fff;
+    background-color: #16a98f;
+  }
+  /* line 412, ../sass/screen.scss */
+  #site-btn:hover {
+    -moz-transition: background-color 0.4s ease-in;
+    -o-transition: background-color 0.4s ease-in;
+    -webkit-transition: background-color 0.4s ease-in;
+    transition: background-color 0.4s ease-in;
+    background-color: #fff;
+    color: #16a98f;
+  }
+
+  /* line 420, ../sass/screen.scss */
+  #close {
+    display: block;
+    cursor: pointer;
+    color: #c4e4dd;
+    display: block;
+    width: 10px;
+    float: right;
+    font-size: 2em;
+    margin: 0em 3em 0em 0em;
+  }
+
+  /* line 432, ../sass/screen.scss */
+  #thumbnail-c {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  /* line 438, ../sass/screen.scss */
+  .thumbnail {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 30%;
+    margin: 0 1em 2em 1em;
+  }
+  /* line 446, ../sass/screen.scss */
+  .thumbnail:hover .thumb-overlay {
+    -moz-animation: fade-in 0.5s ease-in;
+    -webkit-animation: fade-in 0.5s ease-in;
+    animation: fade-in 0.5s ease-in;
+    -moz-animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  /* line 451, ../sass/screen.scss */
+  .thumbnail:hover .shine {
+    -moz-animation: shine-in 1.7s ease-in;
+    -webkit-animation: shine-in 1.7s ease-in;
+    animation: shine-in 1.7s ease-in;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -moz-animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+  }
+
+  /* line 459, ../sass/screen.scss */
+  .thumb-overlay {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+  }
+  /* line 469, ../sass/screen.scss */
+  .thumb-overlay h1, .thumb-overlay h2 {
+    color: #ffffff;
+    position: absolute;
+    bottom: 8px;
+    left: 15px;
+    line-height: 30px;
+  }
+  /* line 477, ../sass/screen.scss */
+  .thumb-overlay h1 {
+    font-size: 1em;
+    bottom: 25px;
+  }
+  /* line 482, ../sass/screen.scss */
+  .thumb-overlay .boq {
+    position: absolute;
+    top: 10px;
+  }
+
+  /* line 488, ../sass/screen.scss */
+  .shine {
+    -moz-transform: rotate(-25deg);
+    -ms-transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+    position: absolute;
+    right: -50px;
+    top: -75px;
+    width: 40px;
+    height: 100px;
+    background-color: #29f8de;
+  }
+
+  /* line 500, ../sass/screen.scss */
+  .project-example-item {
+    display: inline-block;
+    margin: 1em;
+    width: 47%;
+  }
+  /* line 505, ../sass/screen.scss */
+  .project-example-item img {
+    border: thin solid #c7c7c7;
+    width: 100%;
+  }
+
+  /* line 512, ../sass/screen.scss */
+  #footer p {
+    font-size: 1em;
+  }
+
+  /* line 521, ../sass/screen.scss */
+  .social-media {
+    font-size: 1.5em;
+  }
+
+  /* line 526, ../sass/screen.scss */
+  .mobile-only {
+    display: none;
+  }
+
+  /* line 531, ../sass/screen.scss */
+  .ad-layout-fix {
+    width: 250px;
+    display: inline-block;
+    margin-bottom: 1em;
+    margin-right: 4em;
+  }
+}

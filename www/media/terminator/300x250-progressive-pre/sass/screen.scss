@@ -1,0 +1,291 @@
+@import "compass/css3";
+
+@include keyframes(flash-bomb) {
+  0% {
+    @include opacity(1);
+  }
+  100% {
+    @include opacity(0);
+  }
+}
+
+@include keyframes(tt-in) {
+	0%{
+    @include opacity(0);
+  }
+
+	100% {
+    @include opacity(1);
+  }
+}
+
+@include keyframes(messaging-in) {
+	0%{
+    @include opacity(0);
+  }
+
+	100% {
+    @include opacity(1);
+  }
+}
+
+@include keyframes(cta-in) {
+	0%{
+    @include opacity(0);
+    left: 5px;
+  }
+
+	100% {
+    @include opacity(1);
+    left: 9px;
+  }
+}
+
+
+
+body,
+body * {
+  position: relative;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  @include transform(translate3d(0, 0, 0));
+}
+:focus {
+  outline: none;
+}
+::-moz-focus-inner {
+  border: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.exit {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+
+#container {
+  @include box-sizing(border-box);
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  border: 1px solid #000;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#white {
+  @include animation(flash-bomb 1s ease-in);
+  @include animation-play-state(paused);
+  @include animation-fill-mode(forwards);
+  @include opacity(1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+
+  &.boom {
+    @include animation-play-state(running);
+  }
+}
+
+#replay {
+  background: url('../imgs/replay.png') no-repeat transparent;
+  position: absolute;
+  z-index: 100;
+  top: 5px;
+  left: 6px;
+  width: 13px;
+  height: 16px;
+}
+
+.cta {
+  background: url('../imgs/cta-bg.png') no-repeat;
+  position: absolute;
+  width: 98px;
+  height: 24px;
+  left: 9px;
+  bottom: 7px;
+}
+
+.cta-txt {
+  background: url('../imgs/cta-txt.png') no-repeat;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 78px;
+  height: 12px;
+}
+
+.tt {
+  background: url('../imgs/tt.png') no-repeat;
+  position: absolute;
+  width: 300px;
+  height: 65px;
+  left: 1px;
+  top: 0px;
+}
+
+.messaging {
+  background: url('../imgs/messaging.png') no-repeat;
+  position: absolute;
+  width: 199px;
+  height: 43px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+}
+
+.video-c {
+  position: relative;
+  width: 100%;
+  height: 160px;
+
+  &:hover {
+    .video-controls-c {
+      bottom: 6px;
+    }
+  }
+}
+
+.video-controls-c {
+  @include transition(bottom 0.3s ease-out);
+  @include transition-delay(0.3s);
+  position: absolute;
+  width: 100%;
+  height: 16px;
+  bottom: -16px;
+
+  button {
+    margin-left: 6px;
+  }
+}
+
+#large-audio {
+  background: url('../imgs/large-audio.png') center center no-repeat transparent;
+  position: absolute;
+  width: 100%;
+  height: 160px;
+  top: 0;
+  left: 0;
+}
+
+#play-toggle {
+  background: url('../imgs/video-pause.png') no-repeat;
+  width: 12px;
+  height: 16px;
+
+  &.play {
+    background: url('../imgs/video-play.png') no-repeat;
+  }
+}
+
+#audio-toggle {
+  background: url('../imgs/audio-on.png') no-repeat;
+  width: 14px;
+  height: 16px;
+
+  &.off {
+    background: url('../imgs/audio-off.png') no-repeat;
+  }
+}
+
+section {
+  @include box-sizing(border-box);
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  top: 0;
+  left: 0;
+}
+
+.bar-c {
+  background: url('../imgs/progressive-bar-bg.jpg') no-repeat center bottom #fa9010;
+  position: absolute;
+  height: 91px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.transition-c {
+
+}
+
+.resolve-c {
+  background: url('../imgs/resolve-bg.jpg') no-repeat center top;
+}
+
+.dvd {
+  background: url('../imgs/dvd.png') no-repeat;
+  position: absolute;
+  left: 99px;
+  top: 53px;
+  width: 101px;
+  height: 128px;
+}
+
+.resolve-bar-c {
+  background: url('../imgs/resolve-bar-bg.jpg') no-repeat center bottom #fa9010;
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+#resolve-tt {
+  @include opacity(0);
+  @include animation(tt-in .8s ease-in);
+  @include animation-delay(.5s);
+  @include animation-play-state(paused);
+  @include animation-fill-mode(forwards);
+
+  .resolve-anim & {
+    @include animation-play-state(running);
+  }
+}
+
+#resolve-messaging {
+  @include opacity(0);
+  @include animation(messaging-in .8s ease-in);
+  @include animation-delay(.5s);
+  @include animation-play-state(paused);
+  @include animation-fill-mode(forwards);
+
+  .resolve-anim & {
+    @include animation-play-state(running);
+  }
+}
+
+#resolve-cta {
+    left: 5px;
+    bottom: 7px;
+    @include opacity(0);
+    @include animation(cta-in .5s ease-in);
+    @include animation-delay(.5s);
+    @include animation-play-state(paused);
+    @include animation-fill-mode(forwards);
+
+    .resolve-anim &  {
+      @include animation-play-state(running);
+    }
+}

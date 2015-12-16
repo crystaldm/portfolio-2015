@@ -1,0 +1,575 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/css3";
+
+/* DOUBLE CLICK STUDIO MASTHEAD CSS */
+* {
+		padding: 0;
+		margin: 0;
+		-webkit-font-smoothing:antialiased;
+}
+
+body {
+		/* background: #000; */
+}
+
+.scale75{
+		-webkit-transform: scale(.75,.75);
+    -moz-transform: scale(.75,.75);
+    -o-transform: scale(.75,.75);
+    -ms-transform: scale(.75,.75);
+    transform: scale(.75,.75);
+}
+
+.scale125 {
+		-webkit-transform: scale(1.25,1.25);
+    -moz-transform: scale(1.25,1.25);
+    -o-transform: scale(1.25,1.25);
+    -ms-transform: scale(1.25,1.25);
+    transform: scale(1.25,1.25);
+}
+
+
+.fadeIn {
+		opacity: 1 !important;
+}
+
+.quickFade {
+		transition: all .8s ease !important;
+		opacity: 0 !important;
+}
+
+#container{
+  	top: 0px;
+  	left: 0px;
+  	width: 560px;
+  	height: 300px;
+  	position: relative;
+  	overflow: hidden;
+}
+
+// #border {
+// 		position: absolute;
+// 		top: 0px;
+// 	  left: 0px;
+// 		width: 298px;
+// 	  height: 248px;
+// 		border: 1px solid #898989;
+// 		pointer-events: none;
+// 		z-index: 99;
+// }
+
+#bg-exit {
+  	position: absolute;
+  	width: 100%;
+  	height: 100%;
+  	top: 0px;
+  	left: 0px;
+  	cursor: pointer;
+  	opacity: 0;
+}
+
+/* -----------------------------*/
+/*  START FRAME
+/* ----------------------------- */
+#startFrame {
+    display: block;
+  	position: absolute;
+  	width: 500px;
+  	height: 250px;
+  	top: 0px;
+  	left: 0px;
+}
+
+#topTab {
+	  position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	opacity: 0;
+		border-bottom: 1px solid #4e4d4c;
+    transition:opacity 1.25s cubic-bezier(.33,.38,.33,1);
+}
+
+#netflix_tab {
+	  position: absolute;
+		top: 17px;
+	  right: 45px;
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.33,.38,.33,1);
+    transition-delay: .25s;
+}
+
+#netflixDoc_tab {
+	  position: absolute;
+		top: 39px;
+	  right: 19px;
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.33,.38,.33,1);
+    transition-delay: .45s;
+}
+
+#keith_tab {
+		position: absolute;
+		top: 3px;
+	  left: 1px;
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.33,.38,.33,1);
+    transition-delay: .75s;
+}
+
+#richards_tab {
+		position: absolute;
+		top: 22px;
+	  left: -7px;
+
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.33,.38,.33,1);
+    transition-delay: .85s;
+}
+
+#under_tab {
+		position: absolute;
+		top: 42px;
+	  left: -7px;
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.33,.38,.33,1);
+    transition-delay: 1s;
+}
+
+
+#vidPlayer {
+  	position: absolute;
+    left: 0;
+    top: 0;
+    width: 560px;
+    height: 300px;
+    opacity: 0;
+  	background-color: #000;
+		cursor: pointer;
+		//z-index: 8;
+		transition:opacity 1.5s cubic-bezier(.33,.38,.33,1);
+		transition-delay: 1.1s;
+}
+
+#vidControls {
+		@include transition(bottom 0.3s ease-out, opacity 1.25s cubic-bezier(.33,.38,.33,1));
+		@include transition-delay(0.3s);
+	  position: absolute;
+    width: 560px;
+    height: 15px;
+    bottom: -20px;
+    left: 20px;
+		z-index: 9;
+		opacity: 0;
+}
+
+#playBtn {
+		 position: absolute;
+	   left: 0px;
+		 cursor: pointer;
+		 visibility: hidden;
+}
+
+#pauseBtn {
+		 position: absolute;
+	   left: 0px;
+		 cursor: pointer;
+}
+
+#muteBtn {
+		 position: absolute;
+	   left: 25px;
+		 cursor: pointer;
+}
+
+#unmuteBtn {
+		position: absolute;
+	  left: 25px;
+		cursor: pointer;
+		visibility: hidden;
+}
+
+#seekBar {
+	position: absolute;
+	top: -2px;
+	left: 50px;
+	width: 465px;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin:7px 0;
+  width: 100%;
+}
+
+@-moz-document url-prefix() {
+  input[type=range] {
+     margin:2px 0;
+  }
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #898989;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  height: 10px;
+  width: 14px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.5px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #898989;
+}
+input[type=range]::-moz-range-track {
+	top: -15px;
+	width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #898989;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 10px;
+  width: 14px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #898989;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #898989;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 10px;
+  width: 14px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #898989;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #898989;
+}
+
+// #clickSoundBtn{
+// 		position: absolute;
+//   	top: 60px;
+//   	width: 300px;
+//   	height: 190px;
+//   	text-align: center;
+//   	opacity: 0;
+// 		z-index: 9;
+// 		cursor: pointer;
+//   	transition:opacity 1.25s cubic-bezier(.33,.38,.33,1);
+// 		//background: url('large-audio.png') no-repeat center center transparent;
+// }
+
+#clickSoundBtn p {
+	margin-top: 80px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: 600;
+	text-shadow: 1.25px 1.25px rgba(0,0,0,.8);
+	color: #e40813;
+	transition:color .75s cubic-bezier(.33,.38,.33,1);
+}
+
+#clickSoundBtn p:hover {
+	color: #5e959e;
+}
+
+/* -----------------------------*/
+/*  END FRAME
+/* ----------------------------- */
+#endFrame {
+    display: none;
+  	position: absolute;
+  	width: 300px;
+  	height: 250px;
+  	top: 0px;
+  	right: 0px;
+		cursor: default;
+		pointer-events: none;
+}
+
+
+#keyart {
+	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	opacity: 0;
+    transition:opacity 1.5s cubic-bezier(.33,.38,.33,1);
+}
+
+#netflix {
+	position: absolute;
+  	top: 13px;
+  	right:10px;
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.33,.38,.33,1);
+    transition-delay: .25s;
+}
+
+#netflixDoc {
+	position: absolute;
+  	top: 44px;
+  	right: 10px;
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.33,.38,.33,1);
+    transition-delay: .35s;
+}
+
+#keith_tt {
+	position: absolute;
+  	top: 65px;
+  	right: 9px;
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.2,.47,.44,1), top .5s cubic-bezier(.22,.66,.45,1);
+    transition-delay: .75s;
+}
+#keith_tt.slideIn {
+	opacity: 1;
+	top: 78px;
+}
+
+#richards_tt {
+	position: absolute;
+  	top: 95px;
+  	right: 9px;
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.2,.47,.44,1), top .5s  cubic-bezier(.22,.66,.45,1);
+    transition-delay: .9s;
+}
+#richards_tt.slideIn {
+	opacity: 1;
+	top: 110px !important;
+}
+
+#under_tt {
+	position: absolute;
+  	top: 135px;
+  	right: 8px;
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.2,.47,.44,1), top .5s cubic-bezier(.22,.66,.45,1);
+    transition-delay: 1s;
+}
+#under_tt.slideIn {
+	opacity: 1;
+	top: 142px;
+}
+
+#film_tt {
+	position: absolute;
+  	top: 155px;
+  	right: 10px;
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.2,.47,.44,1), top .5s cubic-bezier(.22,.66,.45,1);
+    transition-delay: 1.2s;
+}
+#film_tt.slideIn {
+	opacity: 1;
+	top: 165px;
+}
+
+#expand_btn {
+  	position: absolute;
+    cursor: pointer;
+    pointer-events: all;
+    top: 4px;
+    left: 8px;
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.2,.47,.44,1), top .5s cubic-bezier(.22,.66,.45,1);
+    transition-delay: 1.2s;
+    z-index: 999;
+}
+#expand_btn.fadeIn {
+	opacity: 1;
+}
+
+#close_btn {
+  	position: absolute;
+    cursor: pointer;
+    pointer-events: all;
+    top: 5px;
+    right: 5px;
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.2,.47,.44,1), top .5s cubic-bezier(.22,.66,.45,1);
+    transition-delay: 1.2s;
+    z-index: 999;
+}
+#close_btn.fadeIn {
+	opacity: 1;
+}
+
+
+#nowStreaming {
+	position: absolute;
+  	top: 180px;
+  	right: 9px;
+  	opacity: 0;
+    transition:opacity 1.25s cubic-bezier(.33,.38,.33,1), top .5s cubic-bezier(.22,.66,.45,1);
+    transition-delay: 1.45s;
+}
+#nowStreaming.slideIn {
+	opacity: 1;
+	top: 195px;
+}
+
+
+#ctaBtn {
+	position: absolute;
+	top: 200px;
+	right: 9px;
+  width: 102px;
+  padding: 11px 0;
+	cursor: pointer;
+	pointer-events: all;
+	border: 1px solid #ec1313;
+	opacity: 0;
+	z-index: 11;
+  transition:all 1s cubic-bezier(.33,.38,.33,1), top .5s cubic-bezier(.22,.66,.45,1);
+	overflow: hidden;
+}
+#ctaBtn.slideIn {
+	opacity: 1;
+	top: 215px;
+}
+
+#ctaTxt {
+    font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+    font-size: 10px;
+		font-weight: 400;
+		/*letter-spacing: .1em;*/
+    color: #fff;
+    text-align: center;
+    line-height: 22px;
+}
+
+#ctaBG {
+	right: 0px;
+	background-color: #ec1313;
+	transition: right .3s ease;
+}
+
+#ctaBG.slideOut {
+	right: -100px!important;
+}
+
+#ctaTxt, #ctaBG {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+
+.icon {
+	position : relative;
+	font-size: 9px;
+	padding-left: 1px;
+	padding-top: 8px;
+	top : -1.5px;
+}
+
+
+#replayBtn {
+	display: block;
+	position: absolute;
+	top: -6px;
+  left: -4px;
+	padding: 10px;
+	cursor: pointer;
+	pointer-events: all;
+	opacity: 0;
+	z-index: 999;
+  transition:all .5s linear;
+	z-index: 12;
+}
+#replayBtn:hover {
+	-ms-transform: rotate(360deg); /* IE 9 */
+  -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+  transform: rotate(360deg);
+}
+
+#ctaTxt {
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+#expanding-c {
+  @include transition(width 0.3s ease-out, height 0.3s ease-out);
+  @include box-sizing(border-box);
+  border: 1px solid #898989;
+	overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  &.collapsed {
+    width: 300px;
+		height: 250px;
+  }
+
+  &.expanded {
+    width: 560px;
+		height: 300px;
+  }
+
+}
+
+#expanded-c {
+  position: absolute;
+  width: 560px;
+  height: 300px;
+  top: 0;
+  left: 0;
+
+	&:hover {
+		#vidControls {
+			bottom: 10px;
+		}
+	}
+}
+
+#collapsed-c {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  top: 0;
+  left: 0;
+}
