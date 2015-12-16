@@ -151,6 +151,18 @@ a {
   }
 }
 
+// visit site btn
+#site-btn {
+  color: #fff;
+  background-color: $primary-color;
+
+  &:hover {
+    @include transition(background-color 0.4s ease-in);
+    background-color: #fff;
+    color: $primary-color;
+  }
+}
+
 // portfolio /////////
 
 // lightbox
@@ -339,6 +351,10 @@ a {
   display: block;
 }
 
+iframe {
+  display: none;
+}
+
 // fixes ////////////
 .ad-layout-fix {
   margin: 0;
@@ -348,13 +364,6 @@ a {
   display: none;
 }
 
-
-
-////////////////////////////////
-////////////////////////////////
-
-////////////////////////////////
-///////////////// TABLET STYLES
 
 
 ////////////////////////////////
@@ -378,6 +387,7 @@ a {
   }
   // site id
   .site-id {
+    position: absolute;
     width: 20%;
     margin: 0;
     padding-left: 1em;
@@ -439,7 +449,7 @@ a {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    width: 30%;
+    width: 29%;
     margin: 0 1em 2em 1em;
 
     &:hover {
@@ -533,6 +543,10 @@ a {
     display: inline-block;
     margin-bottom: 1em;
     margin-right: 4em;
+  }
+
+  iframe {
+    display: block;
   }
 
 }
