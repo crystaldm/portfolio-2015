@@ -349,7 +349,18 @@ a {
 }
 
 .mobile-only {
+  width: 100%;
   display: block;
+
+  p {
+    color: $primary-color;
+    font-weight: 700;
+    font-size: 0.8em;
+  }
+
+  img {
+    width: 100%;
+  }
 }
 
 iframe {
@@ -548,5 +559,4 @@ iframe {
   iframe {
     display: block;
   }
-
 }

@@ -16,6 +16,7 @@ var iFrame06;
 var iFrame07;
 var iFrame08;
 var iFrame09;
+var iFrame10;
 
 function init() {
   projectThumb        = document.getElementsByClassName('thumbnail');
@@ -36,6 +37,7 @@ function init() {
   iFrame07            = document.getElementById('iframe-07');
   iFrame08            = document.getElementById('iframe-08');
   iFrame09            = document.getElementById('iframe-09');
+  iFrame10            = document.getElementById('iframe-10');
 
   addListeners();
 }
@@ -97,6 +99,7 @@ function closeLightbox() {
     iFrame07.src = 'media/terminator/300x250-progressive-post/index.html';
     iFrame08.src = 'media/terminator/300x250-progressive-pre/index.html';
     iFrame09.src = 'https://www.youtube.com/embed/qhqCswZgLbA?rel=0';
+    iFrame10.src = 'media/moomoo-mania/game/index.html';
   }, 1000)
 }
 
