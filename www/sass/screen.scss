@@ -70,6 +70,7 @@ $lightbox-bg-color: #e6e6e6;
 #container {
   width: 100%;
   margin: 0 auto;
+  // max-width: 1728px;
 }
 
 // body
@@ -371,7 +372,6 @@ iframe {
 
 ////////////////////////////////
 ///////////////// DESKTOP STYLES
-
 @media (min-width: 580px) {
   // general ////////////
 
@@ -388,7 +388,7 @@ iframe {
   // site id
   .site-id {
     position: absolute;
-    width: 20%;
+    width: 270px;
     margin: 0;
     padding-left: 1em;
     border: none;
@@ -449,7 +449,7 @@ iframe {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    width: 29%;
+    width: 30%;
     margin: 0 1em 2em 1em;
 
     &:hover {
